@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}   
+<div class="container">
+    <div class="col-md-12 ">
+        <div class="col-md-2"><!--
+            <h4 class='text-center'>Nuestros Auspiciadores:</h4>
+            <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus1.jpg" alt="" />
+            <p><a href="#">Criadero Ingenio</a></p><br />
+            <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus2.jpg" alt="" />
+            <p><a href="#">Criadero Ingenio</a></p><br />-->
+        </div>
+        
+        <div class="col-md-8 ">
+            <div class="row">
+                <div class="col-md-2">
+                    
+                </div>
+                <div class="col-md-10 m-left">
+                    
+                    <h3 class='text-center text-orange'><strong>FALTAN EXACTAMENTE </strong></h3>
+                    <div id="counter"></div>
+                    <div class="desc">
+                        <div>Días</div>
+                        <div>Horas</div>
+                        <div>Minutos</div>
+                        <div>Segundos</div>
+                    </div>
+                    <h3 class='text-center text-orange'><strong>PARA OBTENER AL GANADOR</strong></h3>
+                </div>
+                <div class="col-md-2">
+                    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    <div class="col-md-4">
+                        <img class='img-responsive' src="{{ STATIC_URL }}/img/ganador.jpg" alt="" />
+                        <p class='text-center'><a class='btn btn-danger' href="http://adf.ly/9486419/pruebahyo.esy.es">Participar</a> </p>    
+                    </div>
+                    
+                    <div class="col-md-4 ">
+                        <img class='img-responsive' src="{{ STATIC_URL }}/img/ganador.jpg" alt="" />
+                        <p class='text-center'><a class='btn btn-success' href="#">El Ganador</a>  </p>   
+                    </div>
+                    
+                    <div class="col-md-4 ">
+                        <img class='img-responsive' src="{{ STATIC_URL }}/img/ganador.jpg" alt="" />
+                        <p class='text-center'><a class='btn btn-info'href="lista.html">Participantes</a>    </p> 
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+           
+        <!--
+            <h4 class='text-center'>Nuestros Auspiciadores:</h4>
+            <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus3.jpg" alt="" />
+            <p><a href="#">Criadero Ingenio</a></p><br />
+            <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus4.jpg" alt="" />
+            <p><a href="#">Criadero Ingenio</a></p><br />-->
+        </div>          
+    </div>
+</div>
+{% endblock %}
