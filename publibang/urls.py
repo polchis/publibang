@@ -7,6 +7,8 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^login/$', 'security.views.login'),
+    url(r'^logout/$', 'security.views.onlogout'),
     url(r'^inicio/$', 'inicio.views.vista_inicio'),
     url(r'^registro/$', 'inicio.views.vista_registro'),
 )
