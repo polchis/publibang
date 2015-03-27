@@ -7,7 +7,7 @@ from django.contrib.auth import login as auth_login
 from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponse
 from security.models import Usuario
-from security.forms import LoginForm
+from security.forms import LoginForm, RegistroForm
 import datetime
 import time
 import json
@@ -46,6 +46,23 @@ def login(request):
 		else:
 			messages.add_message(request, 50, 'Verifique sus datos.', 'error')
 	return render_to_response('security/login.html', {}, context_instance = RequestContext(request))
+
+def registro(request):
+	if request.method == 'POST':
+		POST = request.POST.copy()
+		POST['is_active'] = True
+		form = RegistroForm(POST)
+		if form.is_valid() and POST['password']==POST['password2'] and POST['password']!="":
+			nuevo_usuario = form.save()
+			nuevo_usuario.set_password(form.cleaned_data['password'])
+			nuevo_usuario.save()
+			return HttpResponseRedirect('/')
+		else:
+			print form.errors
+			messages.add_message(request, 50, 'Verifique sus datos.', 'error')
+	else:
+		form = RegistroForm()
+	return render_to_response('security/registro.html', {}, context_instance = RequestContext(request))
 
 def onlogout(request):
 	if request.user != "AnonymousUser":

@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from views import index
 
 urlpatterns = patterns('',
     # Examples:
@@ -9,6 +10,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/$', 'security.views.login'),
     url(r'^logout/$', 'security.views.onlogout'),
-    url(r'^$', 'inicio.views.index'),
-    url(r'^registro/$', 'inicio.views.vista_registro'),
+    url(r'^registro/$', 'security.views.registro'),
+    url(r'^$', index),
 )

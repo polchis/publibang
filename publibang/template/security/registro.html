@@ -5,29 +5,28 @@
     <div class="col-md-12 ">
         <div class="col-md-12 ">
             <div class="row">
-                <br /><br />
+                <br/><br />
                 <h1 class='text-center'>Registrate Ya!!!</h1>
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="POST" action="/registro/">
+                	<input type='hidden' name='csrfmiddlewaretoken' value='{{ csrf_token }}' />
                     <div class="col-xs-12">
                         <div class="col-xs-6">
                             <div class="col-xs-12">
                                 <div class="form-group">
-                                    <label for="InputUsuario" class="col-sm-3 control-label">Usuario</label>
+                                    <label for="inputUsuario" class="col-sm-3 control-label">Usuario</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="InputUsuario" placeholder="Escriba un Usuario" name="usermane" required>
+                                        <input type="text" class="form-control" id="inputUsuario" placeholder="Escriba un Usuario" name="username" required>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label for="inputPassword" class="col-sm-3 control-label">Contraseña</label>
                                     <div class="col-sm-9">
-                                        <input type="password" class="form-control" id="inputPassword" placeholder="Escribe una contraseña" name="password1" required>
+                                        <input type="password" class="form-control" id="inputPassword" placeholder="Escribe una contraseña" name="password" required>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label for="inputPassword2" class="col-sm-3 control-label">Contraseña</label>

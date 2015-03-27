@@ -9,4 +9,4 @@ class LoginForm(forms.Form):
 class RegistroForm(forms.ModelForm):
     class Meta:
         model = Usuario
-        exclude = ['is_staff', 'last_login', 'date_joined', 'is_superuser', 'user_permissions', 'gender','groups']
+        exclude = ['is_staff', 'last_login', 'date_joined', 'is_superuser', 'user_permissions','groups']
