@@ -11,5 +11,7 @@ urlpatterns = patterns('',
     url(r'^login/$', 'security.views.login'),
     url(r'^logout/$', 'security.views.onlogout'),
     url(r'^registro/$', 'security.views.registro'),
+    url(r'^ganador/$', 'security.views.ganador'),
+
     url(r'^$', index),
 )

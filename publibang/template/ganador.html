@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class='text-center text-orange'>!!!FELICITACIONES !!!</h2>
+<!--<h4 class='text-center text-success'>! Recuerda que tomar bebidas alcoholicas en exceso es dañino !</h4>-->
+<div class="row">
+   <div class="col-xs-12">
+        <div class="col-xs-3">
+        
+        </div>
+        <div class="col-xs-9">
+            <img class='img-responsive fondo-ganador'src="{{STATIC_URL}}img/yaganador.jpg" alt="" />
+            <p class='ubicacion-ganador text-orange'>josejo 965342354</hp>
+        </div>
+        <div class="col-xs-1">
+            
+        </div>
+    </div> 
+</div>
+{% endblock %}
+{% block js %}
+    <script src="{{STATIC_URL}}js/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+    <script src='{{STATIC_URL}}js/reloj.js' type="text/javascript" charset="utf-8"></script>
+{% endblock %}

@@ -107,3 +107,7 @@ def usuariox_pass(request, codigo):
 			}
 		return render_to_response('security/lista.html', context, context_instance = RequestContext(request))
 	return HttpResponseRedirect('/')
+
+
+def ganador(request):
+	return render_to_response('ganador.html', {}, context_instance = RequestContext(request))

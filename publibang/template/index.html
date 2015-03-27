@@ -3,7 +3,15 @@
 {% block content %}
 <div class="container">
     <div class="col-md-12 ">
-        <div class="col-md-2"><!--
+        <div class="col-md-2">
+            <br>
+            <h4 class='text-center'>SORTEO 28 MARZO 2015</h4>
+            <p class='text-center bg-success'>Este fin de semana sera el primer sorteo de <br><strong>1 COVER</strong> por el valor de S/.15.00 para la discoteca que no sobre pasen los 15 nuevos soles de entrada</p>
+            
+            <br><br>
+            <h4 class='text-center'>ENTREGA DEL COVER</h4>
+            <p class='text-center bg-success'>La entrega del cover se hara de forma personal y con la respectiva documentacion <strong>DNI</strong>, el lugar de entraga se acordara con el ganador de sorteo</p>
+        <!--
             <h4 class='text-center'>Nuestros Auspiciadores:</h4>
             <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus1.jpg" alt="" />
             <p><a href="#">Criadero Ingenio</a></p><br />
@@ -18,7 +26,7 @@
                 </div>
                 <div class="col-md-10 m-left">
 
-                    <h3 class='text-center text-orange'><strong>FALTAN EXACTAMENTE </strong></h3>
+                    <h3 class='text-center text-orange'><strong>Solo faltan  </strong></h3>
                     <div id="counter"></div>
                     <div class="desc">
                         <div>Días</div>
@@ -26,7 +34,7 @@
                         <div>Minutos</div>
                         <div>Segundos</div>
                     </div>
-                    <h3 class='text-center text-orange'><strong>PARA OBTENER AL GANADOR</strong></h3>
+                    <h3 class='text-center text-orange'><strong></strong></h3>
                 </div>
                 <div class="col-md-2">
 
@@ -37,18 +45,24 @@
                 <div class="col-md-12">
 
                     <div class="col-md-4">
-                        <img class='img-responsive' src="{{ STATIC_URL }}/img/ganador.jpg" alt="" />
-                        <p class='text-center'><a class='btn btn-danger' href="http://adf.ly/9486419/pruebahyo.esy.es">Participar</a> </p>
+                        <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/gratis.png" alt="" />
+                        {% if not user.is_authenticated %}
+                        <p class='text-center'><a class='btn btn-danger' disabled="disabled" href="http://adf.ly/9486419/hyoclub.pe.hu">P a r t i c i p a </a> </p>
+                        {% else %}
+                        <p class='text-center'><a class='btn btn-danger'  href="http://adf.ly/9486419/hyoclub.pe.hu">P a r t i c i p a</a>  </p>
+                        {% endif %}
                     </div>
 
                     <div class="col-md-4 ">
-                        <img class='img-responsive' src="{{ STATIC_URL }}/img/ganador.jpg" alt="" />
-                        <p class='text-center'><a class='btn btn-success' href="#">El Ganador</a>  </p>
+                        <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/Suerte.gif" alt="" />
+                        
+                        <p class='text-center'><a class='btn btn-success '  href="/ganador/">G a n a d o r</a>  </p>
+                       
                     </div>
 
                     <div class="col-md-4 ">
-                        <img class='img-responsive' src="{{ STATIC_URL }}/img/ganador.jpg" alt="" />
-                        <p class='text-center'><a class='btn btn-info'href="lista.html">Participantes</a>    </p>
+                        <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/lista.png" alt="" />
+                        <p class='text-center'><a class='btn btn-info'href="/lista/">l i s t a d o</a>    </p>
                     </div>
 
                 </div>
