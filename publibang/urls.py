@@ -9,6 +9,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/$', 'security.views.login'),
     url(r'^logout/$', 'security.views.onlogout'),
-    url(r'^inicio/$', 'inicio.views.vista_inicio'),
+    url(r'^$', 'inicio.views.index'),
     url(r'^registro/$', 'inicio.views.vista_registro'),
 )

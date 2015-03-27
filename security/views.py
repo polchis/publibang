@@ -1,14 +1,12 @@
 #encoding:utf-8
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.utils import simplejson
 from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth import login as auth_login
 from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponse
-from django.utils import simplejson
-from security.models import Usuario, MenuFirstLevel, MenuSecondLevel, MenuThirdLevel
+from security.models import Usuario
 from security.forms import LoginForm
 import datetime
 import time
@@ -43,7 +41,11 @@ def login(request):
 				if user.is_active:
 					auth_login(request, user)
 					return HttpResponseRedirect('/')
-	return render_to_response('login.html', context, context_instance = RequestContext(request))
+				else:
+					messages.add_message(request, 50, 'Usuario inactivo.', 'error')
+		else:
+			messages.add_message(request, 50, 'Verifique sus datos.', 'error')
+	return render_to_response('security/login.html', {}, context_instance = RequestContext(request))
 
 def onlogout(request):
 	if request.user != "AnonymousUser":
@@ -83,13 +85,6 @@ def usuariox_pass(request, codigo):
 			form = UsuarioFormPass()
 			messages.info(request, ("Editando la contraseña de " + str(Generals['suject'].username) ))
 			context = {
-					'aplicacion' : Generals['aplicacion'],
-					'items' : Generals['items'],
-					'menu' :  Generals['menu'],
-					'titulo' : Generals['titulo'],
-					'titulo_segundo' : Generals['titulo_segundo'],
-					'action' : Generals['action'],
-					'objetos' : Generals['objetos'],
 					'codigo' : codigo,
 					'form' : form,
 			}

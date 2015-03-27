@@ -4,7 +4,7 @@ from inicio.models import Registro
 from django.template import RequestContext
 # Create your views here.
 
-def vista_inicio(request):
+def index(request):
 	obtener=Registro.objects.all()
 	return render_to_response('index.html',{'obtener':obtener}, context_instance=RequestContext(request))
 def vista_registro(request):
