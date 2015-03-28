@@ -58,3 +58,6 @@ br { clear: both; }
 .m-bottom20{
     margin-bottom: 20px;
 }
+.p-sm{
+	padding:10px;
+}

@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <div class="container">
     <div class="col-md-12 ">
         <div class="col-md-2">
             <br>
             <h4 class='text-center'>SORTEO 28 MARZO 2015</h4>
-            <p class='text-center bg-success'>Este fin de semana sera el primer sorteo de <br><strong>1 COVER</strong> por el valor de S/.15.00 para la discoteca que no sobre pasen los 15 nuevos soles de entrada</p>
-            
+            <p class='text-center bg-success p-sm'>Este fin de semana sera el primer sorteo de <br><strong>1 COVER</strong> por el valor de S/.15.00 para la discoteca que no sobre pasen los 15 nuevos soles de entrada</p>
             <br><br>
             <h4 class='text-center'>ENTREGA DEL COVER</h4>
-            <p class='text-center bg-success'>La entrega del cover se hara de forma personal y con la respectiva documentacion <strong>DNI</strong>, el lugar de entraga se acordara con el ganador de sorteo</p>
+            <p class='text-center bg-success p-sm'>La entrega del cover se hara de forma personal y con la respectiva documentacion <strong>DNI</strong>, el lugar de entraga se acordara con el ganador de sorteo</p>
         <!--
             <h4 class='text-center'>Nuestros Auspiciadores:</h4>
             <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus1.jpg" alt="" />
@@ -18,14 +16,11 @@
             <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus2.jpg" alt="" />
             <p><a href="#">Criadero Ingenio</a></p><br />-->
         </div>
-
         <div class="col-md-8 ">
             <div class="row">
                 <div class="col-md-2">
-
                 </div>
                 <div class="col-md-10 m-left">
-
                     <h3 class='text-center text-orange'><strong>Solo faltan  </strong></h3>
                     <div id="counter"></div>
                     <div class="desc">
@@ -37,34 +32,28 @@
                     <h3 class='text-center text-orange'><strong></strong></h3>
                 </div>
                 <div class="col-md-2">
-
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-md-12">
-
                     <div class="col-md-4">
-                        <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/gratis.png" alt="" />
-                        {% if not user.is_authenticated %}
-                        <p class='text-center'><a class='btn btn-danger' disabled="disabled" href="http://adf.ly/9486419/hyoclub.pe.hu">P a r t i c i p a </a> </p>
+                        <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/gratis.png" alt=""/>
+                        {% if user.is_authenticated and participo %}
+                        <p class='text-center'>Ya estas participando para el siguiente concurso.</p>
+                        {% elif user.is_authenticated and not participo %}
+                        <p class='text-center'><a class='btn btn-danger' href="http://api.adf.ly/api.php?key=2bd28b0dfb7b04c40469e7ac2dd1d5ff&uid=9513593&advert_type=int&domain=adf.ly&url=http://hyoclub.pe.hu/?user={{ user.id }}&token={{ token_user }}">P a r t i c i p a </a> </p>
                         {% else %}
-                        <p class='text-center'><a class='btn btn-danger'  href="http://adf.ly/9486419/hyoclub.pe.hu">P a r t i c i p a</a>  </p>
+                        <p class='text-center'>Participa ahora! Logeate o Registrate</p>
                         {% endif %}
                     </div>
-
                     <div class="col-md-4 ">
                         <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/Suerte.gif" alt="" />
-                        
-                        <p class='text-center'><a class='btn btn-success '  href="/ganador/">G a n a d o r</a>  </p>
-                       
+                        <p class='text-center'><a class='btn btn-success '  href="/ganador/">G a n a d o r</a></p>
                     </div>
-
                     <div class="col-md-4 ">
                         <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/lista.png" alt="" />
                         <p class='text-center'><a class='btn btn-info'href="/lista/">l i s t a d o</a>    </p>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+#encoding:utf-8
 """
 Django settings for publibang project.
 
@@ -48,6 +49,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'security',
+    'star',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -64,6 +66,7 @@ ROOT_URLCONF = 'publibang.urls'
 
 WSGI_APPLICATION = 'publibang.wsgi.application'
 
+CONCURSO = 1
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases

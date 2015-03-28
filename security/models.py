@@ -13,7 +13,7 @@ class Usuario(User):
 	def __unicode__(self):
 		return  u'%s' % (self.username)
 
-	def get_Full_name(self): # se usa en otras librerias
+	def get_Full_name(self):
 		return smart_str(self.last_name + " " + self.first_name)
 
 	def get_Grupos(self):
@@ -36,3 +36,28 @@ class Usuario(User):
 			return "checked"
 		else:
 			return ""
+
+	def get_token(self):
+		q = Token.objects.filter(usuario=self)
+		if q:
+			return q[0]
+		else:
+			return []
+
+	def has_token(self):
+		q = Token.objects.filter(usuario=self)
+		if q:
+			return True
+		else:
+			return False
+
+class Token(models.Model):
+	usuario = models.ForeignKey(Usuario, verbose_name = "Usuario", null = False, blank = False)
+	frase = models.CharField(max_length = 20, verbose_name = "Frase", help_text = "Enter frase.", null = False, blank = False, default = "")
+
+	class Meta:
+		verbose_name = "Token"
+		verbose_name_plural = "Tokens"
+
+	def __str__(self):
+		pass

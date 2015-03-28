@@ -6,11 +6,12 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth import login as auth_login
 from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponse
-from security.models import Usuario
+from security.models import Usuario, Token
 from security.forms import LoginForm, RegistroForm
 import datetime
 import time
 import json
+import uuid
 
 def getAplicacion():
 	return {
@@ -40,6 +41,11 @@ def login(request):
 			if user is not None:
 				if user.is_active:
 					auth_login(request, user)
+					try:
+						usuario = Usuario.obejects.get(id=user.id)
+						if not usuario.has_token():
+							token = Token(usuario=usuario, frase=uuid.uuid4())
+							token.save()
 					return HttpResponseRedirect('/')
 				else:
 					messages.add_message(request, 50, 'Usuario inactivo.', 'error')
