@@ -46,6 +46,8 @@ def login(request):
 						if not usuario.has_token():
 							token = Token(usuario=usuario, frase=uuid.uuid4())
 							token.save()
+					except:
+						pass
 					return HttpResponseRedirect('/')
 				else:
 					messages.add_message(request, 50, 'Usuario inactivo.', 'error')

@@ -12,12 +12,20 @@ def index(request):
 	context = {'participo':False}
 	concurso = Concurso.objects.get(id=settings.CONCURSO)
 	if request.user.is_authenticated() and concurso.estado:
-		usuario = Usuario.objects.get(id=request.user.id)
+		context['token'] = ""
+		sw_token = False
+		try:
+			usuario = Usuario.objects.get(id=request.user.id)
+			if 'token' in request.GET and 'user' in request.GET:
+				participa = Participa(usuario=usuario,concurso=concurso)
+				participa.save()
+				return HttpResponseRedirect('/')
+		except:
+			pass
 		query = Participa.objects.filter(usuario__id=request.user.id,concurso=concurso)
-		if query:
-			context['participo'] = True
-		if usuario.has_token():
-			context['token'] = usuario.get_token()
-		else:
-			context['token'] = ""
+		if sw_token:
+			if query:
+				context['participo'] = True
+			if usuario.has_token():
+				context['token'] = usuario.get_token()
 	return render_to_response('index.html',context, context_instance=RequestContext(request))

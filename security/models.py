@@ -60,4 +60,4 @@ class Token(models.Model):
 		verbose_name_plural = "Tokens"
 
 	def __str__(self):
-		pass
+		return self.usuario.get_Full_name()
