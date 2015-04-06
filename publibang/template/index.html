@@ -5,24 +5,24 @@
         <div class="col-md-2">
             <br>
             <h4 class='text-center'>SORTEO 28 MARZO 2015</h4>
-            <p class='text-center bg-success p-sm'>Este fin de semana sera el primer sorteo de <br><strong>1 COVER</strong> por el valor de S/.15.00 para la discoteca que no sobre pasen los 15 nuevos soles de entrada</p>
+            <p class='text-center bg-success p-sm'>Este fin de semana sera el primer sorteo de <br><strong>1 COVER</strong> por el valor de S/.15.00 para la discoteca que no sobre pasen los 15 nuevos soles de entrada.</p>
             <br><br>
             <h4 class='text-center'>ENTREGA DEL COVER</h4>
-            <p class='text-center bg-success p-sm'>La entrega del cover se hara de forma personal y con la respectiva documentacion <strong>DNI</strong>, el lugar de entraga se acordara con el ganador de sorteo</p>
-        <!--
+            <p class='text-center bg-success p-sm'>La entrega del cover se hara de forma personal y con la respectiva documentacion <strong>DNI</strong>, el lugar de entraga se acordara con el ganador de sorteo.</p>
+        	<!--
             <h4 class='text-center'>Nuestros Auspiciadores:</h4>
             <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus1.jpg" alt="" />
             <p><a href="#">Criadero Ingenio</a></p><br />
             <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus2.jpg" alt="" />
             <p><a href="#">Criadero Ingenio</a></p><br />-->
         </div>
-        <div class="col-md-8 ">
+        <div class="col-md-10">
             <div class="row">
-                <div class="col-md-2">
-                </div>
-                <div class="col-md-10 m-left">
+            	<div class="col-md-2 text-center"></div>
+                <div class="col-md-10 text-center">
                     <h3 class='text-center text-orange'><strong>Solo faltan  </strong></h3>
                     <div id="counter"></div>
+                    <div class="clearfix"></div>
                     <div class="desc">
                         <div>Días</div>
                         <div>Horas</div>
@@ -31,8 +31,7 @@
                     </div>
                     <h3 class='text-center text-orange'><strong></strong></h3>
                 </div>
-                <div class="col-md-2">
-                </div>
+                <div class="col-md-2 text-center"></div>
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -52,14 +51,13 @@
                     </div>
                     <div class="col-md-4 ">
                         <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/lista.png" alt="" />
-                        <p class='text-center'><a class='btn btn-info'href="/lista/">l i s t a d o</a>    </p>
+                        <p class='text-center'><a class='btn btn-info'href="/participantes/">l i s t a d o</a>    </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-2">
-
+        <div>
         <!--
             <h4 class='text-center'>Nuestros Auspiciadores:</h4>
             <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus3.jpg" alt="" />
@@ -71,6 +69,16 @@
 </div>
 {% endblock %}
 {% block js %}
-    <script src="{{STATIC_URL}}js/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{STATIC_URL}}js/jquery.countdown2.js" type="text/javascript" charset="utf-8"></script>
     <script src='{{STATIC_URL}}js/reloj.js' type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+    	$(function(){
+			$('#counter').countdown({
+				image: '/static/img/digits.png',
+				format: "dd:hh:mm:ss",
+				// endTime: new Date('04/28/15 18:00:00'),
+				startTime: '{{time_start}}',
+			});
+		});
+    </script>
 {% endblock %}

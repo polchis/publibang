@@ -2,6 +2,8 @@
 
 from django.db import models
 from security.models import Usuario
+from django.conf import settings
+from pytz import timezone
 
 # Create your models here.
 
@@ -35,3 +37,7 @@ class Participa(models.Model):
 
 	def __str__(self):
 		return self.usuario.get_Full_name()
+
+	def get_creacion_text(self):
+		# return self.creation.astimezone(timezone('America/Chicago')).strftime('%m-%d-%Y %H:%M')
+		return self.creacion.astimezone(timezone(settings.TIME_ZONE)).strftime('%d-%m-%Y %H:%M')

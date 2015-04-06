@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+
 <div class="container">
     <div class="col-md-12 ">
         <div class="col-md-2"><!--
@@ -11,7 +11,7 @@
             <img class='img-rounded img-responsive -img-circle' src="img/aus2.jpg" alt="" />
             <p><a href="#">Criadero Ingenio</a></p><br />-->
         </div>
-        
+
         <div class="col-md-8 ">
             <div class="row">
                 <h3 class='text-center text-orange'><strong>LISTA DE PARTICIPANTES DE ESTA SEMANA</strong> </h3>
@@ -21,58 +21,24 @@
                         <tr>
                             <th class='text-center'>#</th>
                             <th>Usuario</th>
-                            <th>Movil</th>
                             <th>Hora</th>
                         </tr>
                     </thead>
                     <tbody>
+                    {% for x in lista %}
                         <tr>
-                            <th class='text-center' scope="row">1</th>
-                            <td>Mark</td>
-                            <td>23452734</td>
-                            <td>08:00 pm</td>
+                            <td class='text-center' scope="row">{{ forloop.counter }}</td>
+                            <td>{{ x.usuario.get_Full_name }}</td>
+                            <td>{{ x.get_creacion_text }}</td>
                         </tr>
-                        <tr>
-                            <th  class='text-center'scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>96723547</td>
-                            <td>06:00 pm</td>
+                   {% empty %}
+                       <tr>
+                            <td colspan="4">No se encontraron registros.</td>
                         </tr>
-                        <tr>
-                            <th class='text-center' scope="row">3</th>
-                            <td>Larry</td>
-                            <td>964234532</td>
-                            <td>06:00 pm</td>
-                        </tr>
-                        <tr>
-                            <th class='text-center' scope="row">4</th>
-                            <td>Larry</td>
-                            <td>964234532</td>
-                            <td>06:00 pm</td>
-                        </tr>
-                        <tr>
-                            <th class='text-center' scope="row">5</th>
-                            <td>Larry</td>
-                            <td>964234532</td>
-                            <td>05:50 pm</td>
-                        </tr>
-                        <tr>
-                            <th class='text-center' scope="row">6</th>
-                            <td>Larry</td>
-                            <td>964234532</td>
-                            <td>05:45 pm</td>
-                        </tr>
-                        <tr>
-                            <th class='text-center' scope="row">7</th>
-                            <td>Larry</td>
-                            <td>964234532</td>
-                            <td>05:45 pm</td>
-                        </tr>
-                        
-                       
+                    {% endfor %}
                     </tbody>
                 </table>
-                <br />                           
+                <br />
             </div>
         </div>
 
@@ -82,14 +48,11 @@
             <p><a href="#">Criadero Ingenio</a></p><br />
             <img class='img-rounded img-responsive -img-circle' src="img/aus4.jpg" alt="" />
             <p><a href="#">Criadero Ingenio</a></p><br />-->
-        </div>          
+        </div>
     </div>
 
     <div class="col-md-12">
-        
-           
-        
-        
+
     </div>
 </div>
 {% endblock %}

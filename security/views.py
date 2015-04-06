@@ -42,8 +42,10 @@ def login(request):
 				if user.is_active:
 					auth_login(request, user)
 					try:
-						usuario = Usuario.obejects.get(id=user.id)
+						usuario = Usuario.objects.get(id=user.id)
+						print usuario.has_token()
 						if not usuario.has_token():
+							print "no tiene creadndo"
 							token = Token(usuario=usuario, frase=uuid.uuid4())
 							token.save()
 					except:
