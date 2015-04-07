@@ -68,9 +68,9 @@ WSGI_APPLICATION = 'publibang.wsgi.application'
 
 CONCURSO = 1
 
-ADFLY_API = "http://api.adf.ly/api.php?key=a5c83f8ec8c3be3222cf19b6243343ce&uid=9486419&advert_type=int&domain=adf.ly&url="
+ADFLY_API = "http://api.adf.ly/api.php?key=2bd28b0dfb7b04c40469e7ac2dd1d5ff&uid=9513593&advert_type=int&domain=adf.ly&url="
 
-URL_RECIVE = ADFLY_API + "http://hyo.club/participa/recibir/?"
+URL_RECIVE = ADFLY_API + "http://hyo.club/participa/recibir/?token="
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
