@@ -12,6 +12,8 @@ urlpatterns = patterns('',
     url(r'^login/$', 'security.views.login'),
     url(r'^logout/$', 'security.views.onlogout'),
     url(r'^registro/$', 'security.views.registro'),
+    url(r'^participa/enviar/(?P<lugar>\d{1,})$', 'star.views.participa_enviar'),
+    url(r'^participa/recibir/$', 'star.views.participa_recibir'),
     # url(r'^ganador/$', 'security.views.ganador'),
     url(r'^participantes/$', 'star.views.participantes'),
 

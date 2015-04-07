@@ -3,15 +3,27 @@ from __future__ import unicode_literals
 
 from django.db import models, migrations
 from django.conf import settings
+import django.contrib.auth.models
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('auth', '0001_initial'),
+        ('auth', '0006_require_contenttypes_0002'),
     ]
 
     operations = [
+        migrations.CreateModel(
+            name='Token',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('frase', models.CharField(default=b'', help_text=b'Enter frase.', max_length=20, verbose_name=b'Frase')),
+            ],
+            options={
+                'verbose_name': 'Token',
+                'verbose_name_plural': 'Tokens',
+            },
+        ),
         migrations.CreateModel(
             name='Usuario',
             fields=[
@@ -26,5 +38,13 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'users',
             },
             bases=('auth.user',),
+            managers=[
+                (b'objects', django.contrib.auth.models.UserManager()),
+            ],
+        ),
+        migrations.AddField(
+            model_name='token',
+            name='usuario',
+            field=models.ForeignKey(verbose_name=b'Usuario', to='security.Usuario'),
         ),
     ]

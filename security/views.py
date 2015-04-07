@@ -11,7 +11,6 @@ from security.forms import LoginForm, RegistroForm
 import datetime
 import time
 import json
-import uuid
 
 def getAplicacion():
 	return {
@@ -41,15 +40,6 @@ def login(request):
 			if user is not None:
 				if user.is_active:
 					auth_login(request, user)
-					try:
-						usuario = Usuario.objects.get(id=user.id)
-						print usuario.has_token()
-						if not usuario.has_token():
-							print "no tiene creadndo"
-							token = Token(usuario=usuario, frase=uuid.uuid4())
-							token.save()
-					except:
-						pass
 					return HttpResponseRedirect('/')
 				else:
 					messages.add_message(request, 50, 'Usuario inactivo.', 'error')

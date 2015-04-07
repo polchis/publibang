@@ -40,14 +40,19 @@
                         {% if user.is_authenticated and participo %}
                         <p class='text-center'>Ya estas participando para el siguiente concurso.</p>
                         {% elif user.is_authenticated and not participo %}
-                        <p class='text-center'><a class='btn btn-danger' href="http://api.adf.ly/api.php?key=2bd28b0dfb7b04c40469e7ac2dd1d5ff&uid=9513593&advert_type=int&domain=adf.ly&url=http://hyoclub.pe.hu/?user={{ user.id }}&token={{ token_user }}">P a r t i c i p a </a> </p>
+                        <select name="lugar" class="html-tmpl-class-lugar">
+                        	{% for lugar in lugares %}
+                        	<option value="{{ lugar.id }}">{{ lugar.nombre }}</option>
+                        	{% endfor %}
+                        </select>
+                        <p class='text-center'><a class='btn btn-danger html-tmpl-class-participa' href="#">P a r t i c i p a</a></p>
                         {% else %}
                         <p class='text-center'>Participa ahora! Logeate o Registrate</p>
                         {% endif %}
                     </div>
                     <div class="col-md-4 ">
                         <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/Suerte.gif" alt="" />
-                        <p class='text-center'><a class='btn btn-success '  href="/ganador/">G a n a d o r</a></p>
+                        <p class='text-center'><a class='btn btn-success'  href="/ganador/">G a n a d o r</a></p>
                     </div>
                     <div class="col-md-4 ">
                         <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/lista.png" alt="" />
@@ -74,10 +79,13 @@
     <script type="text/javascript" charset="utf-8">
     	$(function(){
 			$('#counter').countdown({
-				image: '/static/img/digits.png',
+				image: '{{ STATIC_URL }}img/digits.png',
 				format: "dd:hh:mm:ss",
 				// endTime: new Date('04/28/15 18:00:00'),
 				startTime: '{{time_start}}',
+			});
+			$(".html-tmpl-class-participa").click(function() {
+				location.href = "/participa/enviar/"+$(".html-tmpl-class-lugar").val();
 			});
 		});
     </script>
