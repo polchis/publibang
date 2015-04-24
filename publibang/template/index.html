@@ -1,92 +1,130 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <div class="col-md-12 ">
-        <div class="col-md-2">
-            <br>
-            <h4 class='text-center'>SORTEO 28 MARZO 2015</h4>
-            <p class='text-center bg-success p-sm'>Este fin de semana sera el primer sorteo de <br><strong>1 COVER</strong> por el valor de S/.15.00 para la discoteca que no sobre pasen los 15 nuevos soles de entrada.</p>
-            <br><br>
-            <h4 class='text-center'>ENTREGA DEL COVER</h4>
-            <p class='text-center bg-success p-sm'>La entrega del cover se hara de forma personal y con la respectiva documentacion <strong>DNI</strong>, el lugar de entraga se acordara con el ganador de sorteo.</p>
-        	<!--
-            <h4 class='text-center'>Nuestros Auspiciadores:</h4>
-            <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus1.jpg" alt="" />
-            <p><a href="#">Criadero Ingenio</a></p><br />
-            <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus2.jpg" alt="" />
-            <p><a href="#">Criadero Ingenio</a></p><br />-->
-        </div>
-        <div class="col-md-10">
-            <div class="row">
-            	<div class="col-md-2 text-center"></div>
-                <div class="col-md-10 text-center">
-                    <h3 class='text-center text-orange'><strong>Solo faltan  </strong></h3>
-                    <div id="counter"></div>
-                    <div class="clearfix"></div>
-                    <div class="desc">
-                        <div>Días</div>
-                        <div>Horas</div>
-                        <div>Minutos</div>
-                        <div>Segundos</div>
-                    </div>
-                    <h3 class='text-center text-orange'><strong></strong></h3>
-                </div>
-                <div class="col-md-2 text-center"></div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="col-md-4">
-                        <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/gratis.png" alt=""/>
-                        {% if user.is_authenticated and participo %}
-                        <p class='text-center'>Ya estas participando para el siguiente concurso.</p>
-                        {% elif user.is_authenticated and not participo %}
-                        <select name="lugar" class="html-tmpl-class-lugar">
-                        	{% for lugar in lugares %}
-                        	<option value="{{ lugar.id }}">{{ lugar.nombre }}</option>
-                        	{% endfor %}
-                        </select>
-                        <p class='text-center'><a class='btn btn-danger html-tmpl-class-participa' href="#">P a r t i c i p a</a></p>
-                        {% else %}
-                        <p class='text-center'>Participa ahora! Logeate o Registrate</p>
-                        {% endif %}
-                    </div>
-                    <div class="col-md-4 ">
-                        <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/Suerte.gif" alt="" />
-                        <p class='text-center'><a class='btn btn-success'  href="/ganador/">G a n a d o r</a></p>
-                    </div>
-                    <div class="col-md-4 ">
-                        <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/lista.png" alt="" />
-                        <p class='text-center'><a class='btn btn-info'href="/participantes/">l i s t a d o</a>    </p>
-                    </div>
-                </div>
-            </div>
+<div class="container">   
+    <div class="row">
+        <div class="col-md-3">
+            <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/gandores.png" alt="" />
+            <p class='text-center'><a class='btn btn-success'  href="/ganador/">G A N A D O R E S</a></p>
         </div>
 
-        <div>
-        <!--
-            <h4 class='text-center'>Nuestros Auspiciadores:</h4>
-            <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus3.jpg" alt="" />
-            <p><a href="#">Criadero Ingenio</a></p><br />
-            <img class='img-rounded img-responsive -img-circle' src="{{ STATIC_URL }}/img/aus4.jpg" alt="" />
-            <p><a href="#">Criadero Ingenio</a></p><br />-->
+        <div class="col-md-6 text-center">
+            <h2 class='text-center'>Cuenta regresiva</h2>
+            <div id="DateCountdown" data-date="2015-01-01 00:00:00" ></div>
+
+                    <br><br><br>
+                    <button class='btn btn-primary' data-toggle="modal" data-target="#myModal" href="#">COMO  PARTICIPAR</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                          </div>
+                          <div class="modal-body">
+                            <h2>MANERA DE PARTICIPAR</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint totam quidem officiis eius corporis laborum numquam possimus suscipit illum explicabo officia nulla quasi non harum, necessitatibus omnis, temporibus quae consectetur!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta esse earum magni similique iusto, atque voluptatibus aperiam vel minima, numquam, fugit, in quaerat facilis. Iure exercitationem aperiam eligendi fugit maxime!</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+        </div>
+        <div class="col-md-3">
+            <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/lista.png" alt="" />
+            <p class='text-center'><a class='btn btn-info'href="/participantes/">LISTA DE PARTICIPANTES</a></p>
         </div>
     </div>
+    <div class="row">
+        <h4 class='text-center text-info'><strong>NUESTROS AUSPICIADRES</strong></h4>
+        <br>
+        <div class="col-xs-12 col-md-3">
+            <div class="ex2">
+                <a href="#"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
+            </div>
+            
+            <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
+            <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
+            <h3 class=' btn btn-info btn-block'><a class='text-white' href="/miniweb/">Ingresa y Participa</a></h3>
+        </div>
+        <div class="col-xs-12 col-md-3">
+            <div class="ex2">
+                <a href="#"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco2.jpg" alt=""></a>
+            </div>
+            
+            <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
+            <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
+            <h3 class=' btn btn-info btn-block'><a class='text-white' href="/miniweb/">Ingresa y Participa</a></h3>
+        </div>
+        <div class="col-xs-12 col-md-3">
+            <div class="ex2">
+                <a href="#"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
+            </div>
+            
+            <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
+            <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
+            <h3 class=' btn btn-info btn-block'><a class='text-white' href="/miniweb/">Ingresa y Participa</a></h3>
+        </div>
+        <div class="col-xs-12 col-md-3">
+            <div class="ex2">
+                <a href="#"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
+            </div>
+            
+            <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
+            <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
+            <h3 class=' btn btn-info btn-block'><a class='text-white' href="/miniweb/">Ingresa y Participa</a></h3>
+        </div>
+        
+
+        
+
+        
+        
+    
+    <!--<div class="row">
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/gratis.png" alt=""/>
+                {% if user.is_authenticated and participo %}
+                <p class='text-center'>Ya estas participando para el siguiente concurso.</p>
+                {% elif user.is_authenticated and not participo %}
+                <select name="lugar" class="html-tmpl-class-lugar">
+                	{% for lugar in lugares %}
+                	<option value="{{ lugar.id }}">{{ lugar.nombre }}</option>
+                	{% endfor %}
+                </select>
+                <p class='text-center'><a class='btn btn-danger html-tmpl-class-participa' href="#">P a r t i c i p a</a></p>
+                {% else %}
+                <p class='text-center'>Participa ahora! Logeate o Registrate</p>
+                {% endif %}
+            </div>
+            
+            <div class="col-md-4 ">
+                
+            </div>
+        </div>
+    </div>-->
+    
 </div>
 {% endblock %}
 {% block js %}
-    <script src="{{STATIC_URL}}js/jquery.countdown2.js" type="text/javascript" charset="utf-8"></script>
-    <script src='{{STATIC_URL}}js/reloj.js' type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-    	$(function(){
-			$('#counter').countdown({
-				image: '{{ STATIC_URL }}img/digits.png',
-				format: "dd:hh:mm:ss",
-				// endTime: new Date('04/28/15 18:00:00'),
-				startTime: '{{time_start}}',
-			});
-			$(".html-tmpl-class-participa").click(function() {
-				location.href = "/participa/enviar/"+$(".html-tmpl-class-lugar").val();
-			});
-		});
-    </script>
+    <script src="{{STATIC_URL}}js/TimeCircles.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $("#DateCountdown").TimeCircles();
+        $("#CountDownTimer").TimeCircles({ time: { Days: { show: false }, Hours: { show: false } }});
+        $("#PageOpenTimer").TimeCircles();
+        
+        var updateTime = function(){
+            var date = $("#date").val();
+            var time = $("#time").val();
+            var datetime = date + ' ' + time + ':00';
+            $("#DateCountdown").data('date', datetime).TimeCircles().start();
+        }
+        $("#date").change(updateTime).keyup(updateTime);
+        $("#time").change(updateTime).keyup(updateTime);
+    </script> 
 {% endblock %}

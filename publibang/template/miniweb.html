@@ -1,0 +1,300 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!--<h4 class='text-center text-success'>! Recuerda que tomar bebidas alcoholicas en exceso es dañino !</h4>-->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-5">
+            <h2 class='text-center text-success'><strong>RECREO CAMPESTRE "BAMBU"</strong></h2>
+        </div>
+        <div class="text-right col-xs-4">
+            
+                
+
+               
+            
+            <!--<h4 class='text-center'><strong class='text-info'>Horario de atencion</strong> : <span class='btn btn-success'>8:30 AM - 10:00 PM</span></span>  </h4>-->
+        <br>
+        </div>
+                    
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <br>
+            <h4 class='text-center'><strong>CALIFICACION</strong> </h4>
+            <img src="{{STATIC_URL}}img/calificacion.png" alt="">
+
+            <div class="muro">
+                <br>
+                <img class='shadow-box img-responsive img-rounded'src="{{STATIC_URL}}img/muro.jpg" alt="" />
+            </div>
+
+            <div class="text-center recomiendan">
+                <br>
+                <button class='btn btn-primary'>Me gusta</button>
+                <br>
+                
+                <p class='text-center'>A <strong class='size-letter-30'>45</strong> Usuarios les gusta este lugar </p>
+
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                  P A R T I C I P A R
+                </button> 
+
+                     <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class=" text-center modal-title" id="myModalLabel">Debes rellanar solo lo que se te pide:</h4>
+                          </div>
+                          <div class="modal-body">
+                            <div class="xs-4">
+                                <form>
+                                  <div class="form-group">
+                                    <label for="alias">Alias :</label>
+                                    <input type="alias" class="form-control" id="alias" placeholder="Enter email">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="movil">movil</label>
+                                    <input type="movil" class="form-control" id="movil" placeholder="movil">
+                                  </div>
+                                  
+                                  <button type="submit" class="btn btn-primary">Aceptar</button>
+                                  
+                                </form>                
+                            </div>
+                            
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+            </div>
+
+        </div>
+        
+        <div class="col-xs-9">
+            <div class="row">
+                <h3 class='text-center text-info'><strong>!GRACIAS POR VISITAR MI ESPACIO!</strong></h3>
+                <div role="tabpanel"><!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#tab1" aria-controls="home" role="tab" data-toggle="tab"><strong>PRODUCTOS Y OFERTAS</strong></a></li>
+                        
+                        <li role="presentation"><a href="#tab3" aria-controls="messages" role="tab" data-toggle="tab"><strong>FOTOS</strong></a></li>
+                        <li role="presentation"><a href="#tab4" aria-controls="messages" role="tab" data-toggle="tab"><strong>INFORMACION Y UBICACION</strong></a></li>
+                        
+                    </ul> <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane  active" id="tab1">
+                            <br>
+                            <div class="col-xs-12">
+                                
+                                <div class="col-xs-3">
+                                    <img  class='img-rounded img-responsive'src="{{STATIC_URL}}img/plato1.jpg" alt="">
+                                    <p class='text-center'>Marisco Trujillano</p>
+                                    <h4 class='text-center'><strong>S/. 15.00</strong></h4>
+                                </div>
+                                <div class="col-xs-3">
+
+                                    <img  class='img-rounded img-responsive'src="{{STATIC_URL}}img/plato1.jpg" alt="">
+                                    <p class='text-center'>Marisco Trujillano</p>
+                                    <h4 class='text-center'><strong>S/. 15.00</strong></h4>
+                                </div>
+                                <div class="col-xs-3">
+
+                                    <img  class='img-rounded img-responsive'src="{{STATIC_URL}}img/plato1.jpg" alt="">
+                                    <p class='text-center'>Marisco Trujillano</p>
+                                    <h4 class='text-center'><strong>S/. 15.00</strong></h4>
+                                </div>
+                                <div class="col-xs-3">
+
+                                    <img  class='img-rounded img-responsive'src="{{STATIC_URL}}img/plato1.jpg" alt="">
+                                    <p class='text-center'>Marisco Trujillano</p>
+                                    <h4 class='text-center'><strong>S/. 15.00</strong></h4>
+                                </div>
+                                <div class="col-xs-3">
+
+                                    <img  class='img-rounded img-responsive'src="{{STATIC_URL}}img/plato1.jpg" alt="">
+                                    <p class='text-center'>Marisco Trujillano</p>
+                                    <h4 class='text-center'><strong>S/. 15.00</strong></h4>
+                                </div>
+                                <div class="col-xs-3">
+
+                                    <img  class='img-rounded img-responsive'src="{{STATIC_URL}}img/plato1.jpg" alt="">
+                                    <p class='text-center'>Marisco Trujillano</p>
+                                    <h4 class='text-center'><strong>S/. 15.00</strong></h4>
+                                </div>
+                                <div class="col-xs-3">
+
+                                    <img  class='img-rounded img-responsive'src="{{STATIC_URL}}img/plato1.jpg" alt="">
+                                    <p class='text-center'>Marisco Trujillano</p>
+                                    <h4 class='text-center'><strong>S/. 15.00</strong></h4>
+                                </div>
+                                <div class="col-xs-3">
+
+                                    <img  class='img-rounded img-responsive'src="{{STATIC_URL}}img/plato1.jpg" alt="">
+                                    <p class='text-center'>Marisco Trujillano</p>
+                                    <h4 class='text-center'><strong>S/. 15.00</strong></h4>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <h3 class='text-center text-info'><strong>OFERTAS</strong></h3>
+                                <div class="col-xs-3">
+                                    <img  class='img-rounded img-responsive'src="{{STATIC_URL}}img/plato1.jpg" alt="">
+                                    <p class='text-center'>Marisco Trujillano</p>
+                                    <h4 class='text-center'><strong>S/. 15.00</strong></h4>
+                                </div>
+                                <div class="col-xs-3">
+                                    <img  class='img-rounded img-responsive'src="{{STATIC_URL}}img/plato1.jpg" alt="">
+                                    <p class='text-center'>Marisco Trujillano</p>
+                                    <h4 class='text-center'><strong>S/. 15.00</strong></h4>
+                                </div>
+                                <div class="col-xs-3">
+                                    <img  class='img-rounded img-responsive'src="{{STATIC_URL}}img/plato1.jpg" alt="">
+                                    <p class='text-center'>Marisco Trujillano</p>
+                                    <h4 class='text-center'><strong>S/. 15.00</strong></h4>
+                                </div>
+                                <div class="col-xs-3">
+                                    <img  class='img-rounded img-responsive'src="{{STATIC_URL}}img/plato1.jpg" alt="">
+                                    <p class='text-center'>Marisco Trujillano</p>
+                                    <h4 class='text-center'><strong>S/. 15.00</strong></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tab2">hola 2</div>
+                        <div role="tabpanel" class="tab-pane fade" id="tab3">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <img class='img-responsive img-rounded'src="{{STATIC_URL}}img/local1.jpg" alt="" alt="">
+                                </div>
+                                <div class="col-xs-4">
+                                    <img class='img-responsive img-rounded'src="{{STATIC_URL}}img/local2.jpg" alt="" alt="">
+                                </div>
+                                <div class="col-xs-4">
+                                    <img class='img-responsive img-rounded'src="{{STATIC_URL}}img/local1.jpg" alt="" alt="">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <img class='img-responsive img-rounded'src="{{STATIC_URL}}img/local1.jpg" alt="" alt="">
+                                </div>
+                                <div class="col-xs-4">
+                                    <img class='img-responsive img-rounded'src="{{STATIC_URL}}img/local2.jpg" alt="" alt="">
+                                </div>
+                                <div class="col-xs-4">
+                                    <img class='img-responsive img-rounded'src="{{STATIC_URL}}img/local1.jpg" alt="" alt="">
+                                </div>
+                            </div>
+                            
+                           
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane fade" id="tab4">
+                            <h4 class='text-center'><strong>SOBRE NOSOTROS</strong></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, delectus, veniam? Facilis quia alias amet necessitatibus aliquid, impedit, exercitationem modi, cupiditate velit vero dolorum, obcaecati? Quis repudiandae minus nisi voluptatibus.</p>
+                            <br>
+                            <div class='mapa m-left-5'>
+                                <img class='img-rounded img-responsive' src="{{STATIC_URL}}img/mapa.gif" alt="">
+                                    <h4 class='text-center'><strong>INFORMES : AV. GIRALDEZ Nº 1342 - HUANCAYO #064-232343 - #995761246</strong></h4>
+
+                            </div>
+                                    
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </div>
+    <div class="row">
+        <h4 class='text-center text-orange'><strong>ENLACES DE INTERES</strong></h4>
+        <div class="col-xs-12 col-md-2">
+            <div class="ex2">
+                <a href="/miniweb/"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
+            </div>
+            
+            <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
+            <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
+            <h3 class=' btn btn-info btn-block'><a class='text-white' href="/miniweb/">Ingresa y Participa</a></h3>
+        </div>
+        <div class="col-xs-12 col-md-2">
+            <div class="ex2">
+                <a href="/miniweb/"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
+            </div>
+            
+            <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
+            <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
+            <h3 class=' btn btn-info btn-block'><a class='text-white' href="/miniweb/">Ingresa y Participa</a></h3>
+        </div>
+        <div class="col-xs-12 col-md-2">
+            <div class="ex2">
+                <a href="/miniweb/"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
+            </div>
+            
+            <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
+            <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
+            <h3 class=' btn btn-info btn-block'><a class='text-white' href="/miniweb/">Ingresa y Participa</a></h3>
+        </div>
+        <div class="col-xs-12 col-md-2">
+            <div class="ex2">
+                <a href="/miniweb/"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
+            </div>
+            
+            <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
+            <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
+            <h3 class=' btn btn-info btn-block'><a class='text-white' href="/miniweb/">Ingresa y Participa</a></h3>
+        </div>
+        <div class="col-xs-12 col-md-2">
+            <div class="ex2">
+                <a href="/miniweb/"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
+            </div>
+            
+            <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
+            <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
+            <h3 class=' btn btn-info btn-block'><a class='text-white' href="/miniweb/">Ingresa y Participa</a></h3>
+        </div>
+        <div class="col-xs-12 col-md-2">
+            <div class="ex2">
+                <a href="/miniweb/"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
+            </div>
+            
+            <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
+            <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
+            <h3 class=' btn btn-info btn-block'><a class='text-white' href="/miniweb/">Ingresa y Participa</a></h3>
+        </div>
+        
+    </div>
+    <!--<h3 class='text-primary text-center'><strong>GANADORES DE CADA SEMANA</strong></h3>
+    <hr>
+    <div class="row">
+
+        <div class="col-xs-3">
+            <img class='img-rounded img-responsive' src="{{STATIC_URL}}img/local3.jpg" alt="">
+        </div>
+        <div class="col-xs-3">
+            <img class='img-rounded img-responsive' src="{{STATIC_URL}}img/local3.jpg" alt="">
+        </div>
+        <div class="col-xs-3">
+            <img class='img-rounded img-responsive' src="{{STATIC_URL}}img/local3.jpg" alt="">
+        </div>
+        <div class="col-xs-3">
+            <img class='img-rounded img-responsive' src="{{STATIC_URL}}img/local3.jpg" alt="">
+        </div>
+
+    </div>-->
+    <br>
+     
+</div>
+{% endblock %}
+{% block js %}
+    <script src="{{STATIC_URL}}js/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+    <script src='{{STATIC_URL}}js/reloj.js' type="text/javascript" charset="utf-8"></script>
+{% endblock %}

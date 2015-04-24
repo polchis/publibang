@@ -61,3 +61,7 @@ class Token(models.Model):
 
 	def __str__(self):
 		return self.usuario.get_Full_name()
+
+
+
+

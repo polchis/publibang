@@ -111,3 +111,6 @@ def usuariox_pass(request, codigo):
 
 def ganador(request):
 	return render_to_response('ganador.html', {}, context_instance = RequestContext(request))
+
+def miniweb(request):
+	return render_to_response('miniweb.html', {}, context_instance = RequestContext(request))

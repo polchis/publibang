@@ -2,6 +2,9 @@
 .m-left{
     margin-left: -40px;
 }
+.m-left-5{
+    margin-left: 5%;
+}
 br { clear: both; }
 
     .cntSeparator {
@@ -60,4 +63,47 @@ br { clear: both; }
 }
 .p-sm{
 	padding:10px;
+}
+
+
+#imageness {
+width: 300px;
+margin: 0 auto;
+}
+.ex2 img{
+height: 240px;
+width: 240px;
+padding: 5px;
+
+
+-webkit-transition: all 1s ease;
+-moz-transition: all 1s ease;
+-ms-transition: all 1s ease;
+transition: all 1s ease;
+}
+.ex2 img:hover {
+height: 263px;
+width: 263px;
+padding:0px;
+opacity: 1;
+
+}
+
+
+.alert-success .alert-link {
+  color: #FFFFFF;
+}
+
+.alert-success {
+  background-color: rgba(221, 72, 20, 0.71);
+  border-color: #DD4814;
+  color: #C2C2C2;
+}
+
+.size-letter-30 {
+    font-size: 30px;
+}
+
+.shadow-box{
+    box-shadow: 0px 0px 14px 11px;
 }
