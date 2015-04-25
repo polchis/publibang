@@ -72,8 +72,8 @@ margin: 0 auto;
 }
 .ex2 img{
 height: 240px;
-width: 240px;
-padding: 5px;
+width: auto;
+padding: 0px;
 
 
 -webkit-transition: all 1s ease;
@@ -83,9 +83,9 @@ transition: all 1s ease;
 }
 .ex2 img:hover {
 height: 263px;
-width: 263px;
+width: auto;
 padding:0px;
-opacity: 1;
+
 
 }
 
@@ -111,3 +111,17 @@ opacity: 1;
 .shadow-text{
   text-shadow: 0px 6px 6px;;
 }
+
+
+@media screen and (min-width: 200px){
+  .m-left-100{
+    margin-left: 100px;
+  }
+}
+
+@media screen and (min-width: 500px){
+  .m-left-100{
+    margin-left: 0px;
+  }
+}
+
