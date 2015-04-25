@@ -38,11 +38,15 @@
                 <br>
                 
                 <p class='text-center'>A <strong class='size-letter-30'>45</strong> Usuarios les gusta este lugar </p>
-
+                {% if user.is_authenticated %}
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
                   P A R T I C I P A R
                 </button> 
-
+                {% else %}
+                <button type="button" disabled='disabled'class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                  P A R T I C I P A R
+                </button>
+                {% endif %}
                      <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                       <div class="modal-dialog">
