@@ -21,8 +21,7 @@ class Concurso(models.Model):
 	def __unicode__(self):
 		return self.nombre
 
-	def get_participantes(self):
-		return Participa.objects.filter(concurso=self)
+	def get_participantes(sel;cts.filter(concurso=self)
 
 
 class Lugar(models.Model):
@@ -67,3 +66,36 @@ class TokenParticipa(models.Model):
 
 	def __unicode__(self):
 		return self.usuario.get_Full_name()
+
+class Premio(models.Model):
+	nombre = models.CharField(max_length=250, null=False, blank=False)
+	activo = models.BooleanField()
+
+class Lugar(models.Model):
+	premio = models.ForeignKey(Premio, verbose_name='Premio', blank=True, null=True)
+	nombre = models.CharField(max_length=250, verbose_name='Nombre', blank=False, null=False)
+	horario = models.CharField(max_length=100, verbose_name='Horario', blank=True, null=True, default="No definido")
+	imagen = models.ImageField(upload_to = 'lugar/ %Y/ %m/ %d', null = True, blank = True)
+	descripcion = models.TextField(verbose_name='Descripcion', null=True, blank=True)
+	url = models.CharField(max_length=50 ,verbose_name='URL', unique=True)
+
+class Producto(models.Model):
+	lugar = models.ForeignKey(Lugar, null=False, blank=False)
+	imagen = models.ImageField(upload_to = 'producto/ %Y/ %m/ %d', null = True, blank = True)
+	nombre = models.CharField(max_length=250, verbose_name='Nombre', blank=False, null=False)
+	precio = models.DecimalField(verbose_name = "Precio", max_digits = 7, decimal_places = 2, help_text = "Ingrese el Precio.", blank = False, null = False)
+	activo = models.BooleanField()
+
+class Oferta(models.Model):
+	lugar = models.ForeignKey(Lugar, null=False, blank=False)
+	imagen = models.ImageField(upload_to = 'producto/ %Y/ %m/ %d', null = True, blank = True)
+	nombre = models.CharField(max_length=250, verbose_name='Nombre', blank=False, null=False)
+	precio = models.DecimalField(verbose_name = "Precio", max_digits = 7, decimal_places = 2, help_text = "Ingrese el Precio.", blank = False, null = False)
+	activo = models.BooleanField()
+
+class Foto(models.Model):
+	lugar = models.ForeignKey(Lugar, null=False, blank=False)
+	imagen = models.ImageField(upload_to = 'producto/ %Y/ %m/ %d', null = True, blank = True)
+	nombre = models.CharField(max_length=250, verbose_name='Nombre', blank=False, null=False)
+	precio = models.DecimalField(verbose_name = "Precio", max_digits = 7, decimal_places = 2, help_text = "Ingrese el Precio.", blank = False, null = False)
+	activo = models.BooleanField()

@@ -1,43 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">   
+<div class="container">
     <div class="row">
         <div class="col-md-3">
-            <img class='m-left-100 img-responsive m-bottom20' src="{{ STATIC_URL }}/img/gandores.png" alt="" />
-            <p class='text-center'><a class='btn btn-success'  href="/ganador/">G A N A D O R E S</a></p>
+            <img class='m-left-100 img-responsive m-bottom20' src="{{ STATIC_URL }}img/gandores.png" alt="" />
+            <p class='text-center'><a class='btn btn-success'  href="/ganador/">GANADORES</a></p>
         </div>
-
         <div class="col-md-6 text-center">
             <h3 class='text-center'>SOLAMENTE FALTAN </h3>
-            <div id="DateCountdown" data-date="2015-01-01 00:00:00" ></div>
-
-                    <br><br><br>
-                    <button class='btn btn-primary' data-toggle="modal" data-target="#myModal" href="#">COMO  PARTICIPAR</button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
+            <div id="DateCountdown" data-date="2015-01-01 00:00:00"></div>
+            <br><br><br>
+            <button class='btn btn-primary' data-toggle="modal" data-target="#modal_reglas" href="#">¿CÓMO PARTICIPAR?</button>
+            <!-- Modal -->
+            <div class="modal fade" id="modal_reglas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">www.hyo.club</h4>
-                          </div>
-                          <div class="modal-body">
-                            
-                            <p>1) Es necesario crear una cuenta  para utilizar  nuestros Servicios. </p>
-                            <p>2) Ingresar a a una publicidad de su preferencia para participar</p>
-                            <p>3) En el publicidad igresada dar clic al boton participar</p>
-                            <p>4) Esperar el dia del sorteo que seran cada sabado</p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                          </div>
+                            <h4 class="modal-title" id="myModalLabel">¿CÓMO PARTICIPAR?</h4>
                         </div>
-                      </div>
+                        <div class="modal-body">
+                            <ol>
+                                <li>Es necesario crear una cuenta  para utilizar  nuestros Servicios.</li>
+                                <li>Ingresar a a una publicidad de su preferencia para participar.</li>
+                                <li>En el publicidad igresada dar clic al boton participar.</li>
+                                <li>Esperar el dia del sorteo que seran cada sabado.</li>
+                            </ol>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
                     </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-3">
-            <img class='m-left-100 img-responsive m-bottom20' src="{{ STATIC_URL }}/img/lista.png" alt="" />
+            <img class='m-left-100 img-responsive m-bottom20' src="{{ STATIC_URL }}img/lista.png" alt="" />
             <p class='text-center'><a class='btn btn-info'href="/participantes/">LISTA DE PARTICIPANTES</a></p>
         </div>
     </div>
@@ -48,20 +46,6 @@
             <div class="ex2">
                 <a href="/miniweb/"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
             </div>
-            
-            <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
-            <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
-            <div class="text-center">
-                <p class=' btn btn-info '><a class='text-white' href="/miniweb/">Ingresa y Participa</a></p>
-            </div>
-            <br>
-        </div>
-
-        <div class="col-xs-12 col-md-3">
-            <div class="ex2">
-                <a href="/miniweb/"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
-            </div>
-            
             <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
             <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
             <div class="text-center">
@@ -73,7 +57,6 @@
             <div class="ex2">
                 <a href="/miniweb/"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
             </div>
-            
             <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
             <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
             <div class="text-center">
@@ -85,7 +68,7 @@
             <div class="ex2">
                 <a href="/miniweb/"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
             </div>
-            
+
             <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
             <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
             <div class="text-center">
@@ -93,41 +76,19 @@
             </div>
             <br>
         </div>
-
-        
-
-        
-        
-
-        
-
-        
-        
-    
-    <!--<div class="row">
-        <div class="col-md-12">
-            <div class="col-md-4">
-                <img class='img-responsive m-bottom20' src="{{ STATIC_URL }}/img/gratis.png" alt=""/>
-                {% if user.is_authenticated and participo %}
-                <p class='text-center'>Ya estas participando para el siguiente concurso.</p>
-                {% elif user.is_authenticated and not participo %}
-                <select name="lugar" class="html-tmpl-class-lugar">
-                	{% for lugar in lugares %}
-                	<option value="{{ lugar.id }}">{{ lugar.nombre }}</option>
-                	{% endfor %}
-                </select>
-                <p class='text-center'><a class='btn btn-danger html-tmpl-class-participa' href="#">P a r t i c i p a</a></p>
-                {% else %}
-                <p class='text-center'>Participa ahora! Logeate o Registrate</p>
-                {% endif %}
+        <div class="col-xs-12 col-md-3">
+            <div class="ex2">
+                <a href="/miniweb/"><img class='img-responsive img-rounded' src="{{STATIC_URL}}img/disco1.jpg" alt=""></a>
             </div>
-            
-            <div class="col-md-4 ">
-                
+
+            <h3 class='text-center text-info' ><strong>Pitbull Bar</strong></h3>
+            <h4 class='text-center text-info'>7:30PM - 0:00AM</h4>
+            <div class="text-center">
+                <p class=' btn btn-info '><a class='text-white' href="/miniweb/">Ingresa y Participa</a></p>
             </div>
+            <br>
         </div>
-    </div>-->
-    
+    </div>
 </div>
 {% endblock %}
 {% block js %}
@@ -136,7 +97,7 @@
         $("#DateCountdown").TimeCircles();
         $("#CountDownTimer").TimeCircles({ time: { Days: { show: false }, Hours: { show: false } }});
         $("#PageOpenTimer").TimeCircles();
-        
+
         var updateTime = function(){
             var date = $("#date").val();
             var time = $("#time").val();
@@ -145,5 +106,5 @@
         }
         $("#date").change(updateTime).keyup(updateTime);
         $("#time").change(updateTime).keyup(updateTime);
-    </script> 
+    </script>
 {% endblock %}
